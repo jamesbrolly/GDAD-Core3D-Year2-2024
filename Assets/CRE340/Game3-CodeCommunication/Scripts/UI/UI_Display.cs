@@ -1,41 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+using DG.Tweening;
 
 public class UI_Display : MonoBehaviour
 {
-    
-    //References to the UI elements in the scene
+    // Reference to the UI elements
     public TextMeshProUGUI playerNameText;
     public TextMeshProUGUI playerHealthText;
     public TextMeshProUGUI scoreText;
-
-    //Method to update the player's name in the UI
+    
+    // Update the player name in the UI
     public void UpdatePlayerName(string playerName)
     {
-        if(playerNameText != null)
+        if (playerNameText != null)
         {
             playerNameText.text = "Player: " + playerName;
         }
     }
 
-    //Method to update player's healh in the UI
+    // Update the player health in the UI
     public void UpdatePlayerHealth(int playerHealth)
     {
-        if(playerHealthText != null)
+        if (playerHealthText != null)
         {
-            playerHealthText.text = "Health: " + playerHealth.ToString();
+            playerHealthText.text = "Health: " + playerHealth;
+            
+            //TODO - add a health animation effect
+            
+            
         }
     }
 
-    //Method to update player's score in the UI
+    // Update the score in the UI
     public void UpdateScore(int score)
     {
-        if(scoreText != null)
+        if (scoreText != null)
         {
-            scoreText.text = "Score: " + score.ToString();
+            scoreText.text = "Score: " + score;
+            
+            //TODO - add a score animation effect
+            
+            
+            
+            //TODO - add a score sound effect
+            
+            
         }
     }
-
 }
