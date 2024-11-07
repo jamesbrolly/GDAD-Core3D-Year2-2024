@@ -14,7 +14,6 @@ public class CollectableItem : MonoBehaviour
         transform.localScale = Vector3.zero;
         transform.DOScale(Vector3.one, 1f).SetEase(Ease.OutBounce);
         
-        
     }
     
     private void OnTriggerEnter(Collider other) {
@@ -37,8 +36,7 @@ public class CollectableItem : MonoBehaviour
         inventoryManager.AddItem(itemData); // Add the item to the inventory
         
         //TODO - add and audio feedback when the object is collected
-        
-        
+        AudioEventManager.PlaySFX(null, "Special Powerup",  1.0f, 1.0f, true, 0.1f, 0f, "null");
         
         Collected();
     }
