@@ -68,8 +68,7 @@ public class Enemy : MonoBehaviour, IDamagable
         }
         
         //TODO - add and audio feedback when the enemy dies
-        
-        
+        AudioEventManager.PlaySFX(null, "Explosion Flesh",  1.0f, 1.0f, true, 0.1f, 0f);
 
         // Optional: add death logic, like spawning loot or playing an animation
         Destroy(gameObject);
@@ -89,8 +88,7 @@ public class Enemy : MonoBehaviour, IDamagable
         Invoke("ResetMaterial", 0.1f);
         
         //TODO - add an audio feedback when the enemy is hit
-        
-        
+        AudioEventManager.PlaySFX(this.transform, "Flesh Hit",  1.0f, 1.0f, true, 0.1f, 0f);
     }
 
     private void ResetMaterial()
